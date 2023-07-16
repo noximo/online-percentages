@@ -19,6 +19,9 @@ a:hover {
 a:visited {
     color: rgb(203, 213, 225);
 }
+a.inlineLink{
+    display: inline-block;
+}
 
 #content {
     text-align: center;
