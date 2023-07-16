@@ -1,0 +1,45 @@
+body {
+    color: rgb(203, 213, 225);
+    background: #0f172a;
+    font-family: sans-serif;
+}
+
+#content {
+    text-align: center;
+}
+
+.numberInput {
+    color: rgb(203, 213, 225);
+    background: #1e293b;
+    border: 0;
+    border-bottom: 1px solid gray;
+    min-width: 4rem;
+    width: 4rem;
+    font-size: x-large;
+}
+
+#queryLine {
+    font-size: x-large;
+}
+
+#result {
+    font-size: xxx-large;
+}
+
+.bubble {
+    background: #1e293b;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid black;
+    width: 80%;
+}
+
+.text {
+    text-align: justify;
+}
+
+.text li {
+    margin-top: 1rem;
+}

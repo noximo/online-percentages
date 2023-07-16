@@ -4,55 +4,9 @@
     <meta charset="utf-8">
     <link rel="canonical" href="https://online-percentages.help/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            color: rgb(203, 213, 225);
-            background: #0f172a;
-            font-family: sans-serif;
-        }
-
-        #content {
-            text-align: center;
-        }
-
-        .numberInput {
-            color: rgb(203, 213, 225);
-            background: #1e293b;
-            border: 0;
-            border-bottom: 1px solid gray;
-            min-width: 4rem;
-            width: 4rem;
-            font-size: x-large;
-        }
-
-        #queryLine {
-            font-size: x-large;
-        }
-
-        #result {
-            font-size: xxx-large;
-        }
-
-        .bubble {
-            background: #1e293b;
-            border-radius: 10px;
-            display: inline-block;
-            padding: 1rem;
-            margin: 1rem;
-            border: 1px solid black;
-            width: 80%;
-        }
-
-        .text {
-            text-align: justify;
-        }
-
-        .text li {
-            margin-top: 1rem;
-        }
-    </style>
     <title>Easy Online Percentages - Calculate X% out of Y</title>
     <meta name="description" content="Calculate how much is X percent out of value Y - easy online percentages calculator">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <section id="content">
@@ -117,8 +71,7 @@
         <p>Don't waste any more time manually calculating percentages. Try our Percentage Calculator today and experience the convenience and accuracy it offers. Empower yourself with the right tool and simplify your percentage calculations like never before.</p>
     </div>
 </section>
-<script>
-
+<script defer>
     function calculate() {
         const number = parseFloat(document.getElementById("number").value);
         const percentage = parseFloat(document.getElementById("percentage").value);
