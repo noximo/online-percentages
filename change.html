@@ -41,8 +41,8 @@
         <a href="/">X percent out of Y is how much? (X% out of Y is ?)</a>
         <a href="value-plus-percentage.html">Value plus X percent is how much? (Y + X% is ?)</a>
         <a href="value-minus-percentage.html">Value minus X percent is how much? (Y - X% is ?)</a>
-        <a href="difference.html">Difference between two numbers is how much percent? (ie population of two different cities)</a>
-        <a href="change.html">Change from initial number to final number is how much percent? (ie change in population of a single city)</a>
+        <a href="difference.html">Difference between two numbers is how much percent? (e.g. population of two different cities)</a>
+        <a href="change.html">Change from initial number to final number is how much percent? (e.g. change in population of a single city)</a>
     </div>
 
 
@@ -89,9 +89,7 @@
         const firstNumber = parseFloat(document.getElementById("firstNumber").value);
         const secondNumber = parseFloat(document.getElementById("secondNumber").value);
         if (firstNumber && secondNumber) {
-            const difference = Math.abs(firstNumber - secondNumber);
-            const result = (difference / ((firstNumber + secondNumber) / 2)) * 100;
-
+            const result = ((firstNumber - secondNumber) / Math.abs(firstNumber)) * 100;
             document.getElementById("result").innerHTML = Number(result).toLocaleString();
         }
     }
