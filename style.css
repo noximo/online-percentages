@@ -21,6 +21,7 @@ a:visited {
 }
 a.inlineLink{
     display: inline-block;
+    margin: 0;
 }
 
 #content {
