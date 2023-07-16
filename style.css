@@ -4,6 +4,22 @@ body {
     font-family: sans-serif;
 }
 
+a {
+    color: rgb(203, 213, 225);
+    display: table;
+    margin-top: 1rem;
+    text-decoration: none;
+    border-bottom: 1px dashed rgb(203, 213, 225);
+}
+
+a:hover {
+    border-bottom: 1px solid rgb(203, 213, 225);
+}
+
+a:visited {
+    color: rgb(203, 213, 225);
+}
+
 #content {
     text-align: center;
 }
