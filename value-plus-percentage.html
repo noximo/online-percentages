@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="canonical" href="https://online-percentages.help/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Easy Online Percentages - Calculate X% out of Y</title>
+    <title>Easy Online Percentages - Calculate X plus Y%</title>
     <meta name="description" content="Calculate how much is X percent out of value Y - easy online percentages calculator">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,12 +13,12 @@
     <h1>
         Easy Online Percentage Calculator
     </h1>
-    <h2>Calculate X percent out of value Y</h2>
+    <h2>Calculate X plus Y%</h2>
     <div class="bubble ">
 
         <section id="queryLine">
-            <input class="numberInput" id="percentage" placeholder="X" type="text" pattern="^[0-9]+(\.[0-9]+)?$">% out of
-            <input class="numberInput" id="number" placeholder="Y" type="text" pattern="^[0-9]+(\.[0-9]+)?$">
+            <input class="numberInput" id="number" placeholder="Y" type="text" pattern="^[0-9]+(\.[0-9]+)?$"> plus
+            <input class="numberInput" id="percentage" placeholder="X" type="text" pattern="^[0-9]+(\.[0-9]+)?$">%
         </section>
         <section id="resultLine">
             <div id="equals">is</div>
@@ -29,6 +29,7 @@
     <div class="bubble text">
         <h2>Not what you're looking for?</h2>
         <p>Maybe you want</p>
+
         <a href="/">X percent out of Y is how much? (X% out of Y is ?)</a>
         <a href="value-plus-percentage.html">Value plus X percent is how much? (Y + X% is ?)</a>
         <a href="value-minus-percentage.html">Value minus X percent is how much? (Y - X% is ?)</a>
@@ -41,21 +42,22 @@
         <h2>Step-by-Step Percentage Calculation</h2>
         <ol>
             <li>
-                <strong>Understand the Percentage:</strong> Determine the percentage you want to calculate. For example, let's say you want to find 20% of a given number.
+                <strong>Identify the Initial Value:</strong> Determine the initial value to which you want to add a percentage. This can be any numerical value, such as the price of a product or the total amount in a calculation.
             </li>
             <li>
-                <strong>Convert the Percentage to a Decimal:</strong> To make calculations easier, convert the percentage to a decimal. Divide the percentage by 100. In our example, 20% becomes 0.20 (20 ÷ 100 = 0.20).
+                <strong>Determine the Percentage:</strong> Decide on the percentage you want to add to the initial value. For example, let's say you want to add 15% to the initial value.
             </li>
             <li>
-                <strong>Identify the Number:</strong> Identify the number from which you want to find the percentage. This can be a total amount, a quantity, or any value you want to calculate a percentage of.
+                <strong>Convert the Percentage to Decimal:</strong> Convert the percentage to decimal form by dividing it by 100. In our example, 15% would become 0.15 (15 ÷ 100 = 0.15).
             </li>
             <li>
-                <strong>Multiply:</strong> Multiply the decimal value (from Step 2) by the number (from Step 3). This will give you the calculated percentage. For example, if the number is 500, you would multiply 0.20 by 500, resulting in 100 (0.20 x 500 = 100).
+                <strong>Calculate the Increase:</strong> Multiply the initial value by the decimal equivalent of the percentage. This will give you the increase amount. For instance, if the initial value is 200 and you want to add 15%, you would multiply 200 by 0.15, resulting in 30 (200 * 0.15 = 30).
             </li>
             <li>
-                <strong>Interpret the Result:</strong> The result of the calculation represents the percentage you were looking for. In our example, 20% of 500 is 100.
+                <strong>Add the Increase to the Initial Value:</strong> Add the increase amount calculated in the previous step to the initial value. This will give you the final result. Using our example, you would add 30 to 200, resulting in 230 (200 + 30 = 230).
             </li>
         </ol>
+
     </div>
     <div class="bubble text">
         <p>Welcome to our powerful Percentage Calculator! Whether you're a student, professional, or just someone in need of quick calculations, we've got you covered. Our user-friendly tool takes the hassle out of calculating percentages by providing instant and accurate results.</p>
@@ -76,8 +78,7 @@
         const number = parseFloat(document.getElementById("number").value);
         const percentage = parseFloat(document.getElementById("percentage").value);
         if (number && percentage) {
-            document.getElementById('equals').style.display = '';
-            let result = percentage * number / 100;
+            let result = number + (number * percentage / 100);
             document.getElementById("result").innerHTML = Number(result).toLocaleString();
         }
     }
