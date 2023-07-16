@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://online-percentages.help/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easy Online Percentages - Calculate X plus Y%</title>
+    <meta name="description" content="Calculate how much is X percent out of value Y - easy online percentages calculator">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="content">
+    <h1>
+        Easy Online Percentage Calculator
+    </h1>
+    <h2>Calculate percentage difference between two numbers</h2>
+    <div class="bubble ">
+
+        <section id="queryLine">
+            Percentage change from <input class="numberInput" id="firstNumber" placeholder="Y" type="text" pattern="^[0-9]+(\.[0-9]+)?$"> to
+            <input class="numberInput" id="secondNumber" placeholder="X" type="text" pattern="^[0-9]+(\.[0-9]+)?$">
+        </section>
+        <section id="resultLine">
+            <div id="equals">is</div>
+            <strong id="result">?</strong>%
+        </section>
+        <section>
+            <p>Note: You're calculating a percentage change from one value to another. This is the correct way if you have an <i>old</i> and
+                <i>new</i> value (For example a change in a population of a single city). The order of numbers matter! Initial number must be first, final number second.
+            </p>
+            <p>But maybe you want to calculate a percentage difference of a two different values (For example comparing population of two different cities) where the order of values doesn't matter (The difference between two cities would be the same no matter what city you put in first)
+                For that use our <a href="change.html">percentage difference calculator</a> instead.</p>
+        </section>
+
+    </div>
+
+    <div class="bubble text">
+        <h2>Not the percentage calculation you're looking for?</h2>
+        <p>Maybe you want</p>
+
+        <a href="/">X percent out of Y is how much? (X% out of Y is ?)</a>
+        <a href="value-plus-percentage.html">Value plus X percent is how much? (Y + X% is ?)</a>
+        <a href="value-minus-percentage.html">Value minus X percent is how much? (Y - X% is ?)</a>
+        <a href="difference.html">Difference between two numbers is how much percent? (ie population of two different cities)</a>
+        <a href="change.html">Change from initial number to final number is how much percent? (ie change in population of a single city)</a>
+    </div>
+
+
+    <div class="bubble text">
+        <h1>Step-by-Step Tutorial: Calculating Percentage Difference</h1>
+
+        <ol>
+            <li>
+                <strong>Identify the Initial Value and the Final Value:</strong> Determine the initial value (the starting point) and the final value (the ending point) for which you want to calculate the percentage difference. For example, let's say the initial value is 100 and the final value is 150.
+            </li>
+            <li>
+                <strong>Calculate the Difference:</strong> Subtract the initial value from the final value to find the numerical difference between the two numbers. In our example, subtracting 100 from 150 gives us a difference of 50.
+            </li>
+            <li>
+                <strong>Calculate the Relative Difference:</strong> Take the absolute value of the difference calculated in the previous step. This ensures that the percentage difference is always positive, regardless of whether the final value is greater or smaller than the initial value. In our example, the absolute value of 50 is also 50.
+            </li>
+            <li>
+                <strong>Calculate the Percentage Difference:</strong> Divide the relative difference by the initial value. Then, multiply the result by 100 to obtain the percentage difference. In our example, dividing 50 by 100 and multiplying by 100 gives us a percentage difference of 50%.
+            </li>
+            <li>
+                <strong>Interpret the Result:</strong> The percentage difference represents the relative change between the initial and final values, expressed as a percentage. A positive percentage indicates an increase, while a negative percentage indicates a decrease. In our example, a 50% percentage difference implies a 50% increase from the initial value of 100 to the final value of 150.
+            </li>
+        </ol>
+
+
+    </div>
+    <div class="bubble text">
+        <h1>Welcome to our dependable Percentage Difference Calculator!</h1>
+        <p>Experience the convenience of accurately calculating the percentage difference between two numbers effortlessly. Whether you're comparing data sets, evaluating variances, or analyzing statistical information, our calculator provides reliable results to aid your decision-making process.</p>
+
+        <p>Calculating the percentage difference is a breeze. Simply input the two numbers you wish to compare, and our calculator will handle the rest. Our advanced algorithms swiftly determine the absolute difference between the two values and calculate the relative difference as a percentage.</p>
+
+        <p>Let's consider an example. If you want to analyze the percentage difference between 80 and 60, our calculator will reveal a difference of 20%. This means the second number is 20% lower than the first number.</p>
+
+        <p>Another practical application is when comparing prices. For instance, if a product is priced at $100 in one store and $120 in another store, our calculator will indicate a percentage difference of 20%. This represents the variation in price between the two locations.</p>
+
+        <p>Accuracy and efficiency are paramount to us. Our calculator ensures precise results within seconds, providing you with reliable insights for informed decision-making.</p>
+
+        <p>Say goodbye to manual calculations and uncertainty. Try our Percentage Difference Calculator today and unlock the power of accurate analysis and comparison. Empower yourself with a tool that simplifies complex calculations and enhances your understanding of the percentage difference between two numbers.</p>
+    </div>
+</section>
+<script defer>
+    function calculate() {
+        const firstNumber = parseFloat(document.getElementById("firstNumber").value);
+        const secondNumber = parseFloat(document.getElementById("secondNumber").value);
+        if (firstNumber && secondNumber) {
+            const difference = Math.abs(firstNumber - secondNumber);
+            const result = (difference / ((firstNumber + secondNumber) / 2)) * 100;
+
+            document.getElementById("result").innerHTML = Number(result).toLocaleString();
+        }
+    }
+
+    inputs = document.getElementsByClassName('numberInput');
+    let input;
+    for (input of inputs) {
+        input.addEventListener("input", function (event) {
+            const input = event.target;
+            const width = input.value.length * 16;
+            input.style.width = width + "px";
+            calculate();
+        });
+    }
+</script>
+<script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4779620150755845" crossorigin="anonymous"></script>
+</body>
+</html>

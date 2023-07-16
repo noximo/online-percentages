@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://online-percentages.help/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easy Online Percentages - Calculate X plus Y%</title>
+    <meta name="description" content="Calculate how much is X percent out of value Y - easy online percentages calculator">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="content">
+    <h1>
+        Easy Online Percentage Calculator
+    </h1>
+    <h2>Calculate X plus Y%</h2>
+    <div class="bubble ">
+
+        <section id="queryLine">
+            <input class="numberInput" id="number" placeholder="Y" type="text" pattern="^[0-9]+(\.[0-9]+)?$"> minus
+            <input class="numberInput" id="percentage" placeholder="X" type="text" pattern="^[0-9]+(\.[0-9]+)?$">%
+        </section>
+        <section id="resultLine">
+            <div id="equals">is</div>
+            <strong id="result">?</strong>
+        </section>
+    </div>
+
+    <div class="bubble text">
+        <h2>Not the percentage calculation you're looking for?</h2>
+        <p>Maybe you want</p>
+
+        <a href="/">X percent out of Y is how much? (X% out of Y is ?)</a>
+        <a href="value-plus-percentage.html">Value plus X percent is how much? (Y + X% is ?)</a>
+        <a href="value-minus-percentage.html">Value minus X percent is how much? (Y - X% is ?)</a>
+        <a href="difference.html">Difference between initial number and final number is how much percent?</a>
+    </div>
+
+
+    <div class="bubble text">
+        <h2>Step-by-Step Percentage Calculation</h2>
+        <ol>
+            <li>
+                <strong>Identify the Initial Value:</strong> Determine the initial value to which you want to add a percentage. This can be any numerical value, such as the price of a product or the total amount in a calculation.
+            </li>
+            <li>
+                <strong>Determine the Percentage:</strong> Decide on the percentage you want to add to the initial value. For example, let's say you want to add 15% to the initial value.
+            </li>
+            <li>
+                <strong>Convert the Percentage to Decimal:</strong> Convert the percentage to decimal form by dividing it by 100. In our example, 15% would become 0.15 (15 ÷ 100 = 0.15).
+            </li>
+            <li>
+                <strong>Calculate the Increase:</strong> Multiply the initial value by the decimal equivalent of the percentage. This will give you the increase amount. For instance, if the initial value is 200 and you want to add 15%, you would multiply 200 by 0.15, resulting in 30 (200 * 0.15 = 30).
+            </li>
+            <li>
+                <strong>Add the Increase to the Initial Value:</strong> Add the increase amount calculated in the previous step to the initial value. This will give you the final result. Using our example, you would add 30 to 200, resulting in 230 (200 + 30 = 230).
+            </li>
+        </ol>
+
+    </div>
+    <div class="bubble text">
+        <p>Welcome to our powerful Percentage Calculator! Whether you're a student, professional, or just someone in need of quick calculations, we've got you covered. Our user-friendly tool takes the hassle out of calculating percentages by providing instant and accurate results.</p>
+
+        <p>With our
+            <strong>Easy Percentage Calculator</strong>, you can effortlessly determine any percentage of a given number. Whether you need to calculate discounts, markups, or determine proportions, our tool simplifies the process. No more struggling with complex formulas or manual calculations—let our calculator do the work for you!
+        </p>
+
+        <p>Our advanced algorithms ensure precise calculations, ensuring you get the correct percentage every time. Simply input the number and the percentage you want to calculate, and voila! Our calculator will provide you with the precise result in an instant.</p>
+
+        <p>We understand the importance of speed and efficiency, which is why our Percentage Calculator is designed to deliver lightning-fast results. Say goodbye to time-consuming calculations and hello to effortless accuracy.</p>
+
+        <p>Don't waste any more time manually calculating percentages. Try our Percentage Calculator today and experience the convenience and accuracy it offers. Empower yourself with the right tool and simplify your percentage calculations like never before.</p>
+    </div>
+</section>
+<script defer>
+    function calculate() {
+        const number = parseFloat(document.getElementById("number").value);
+        const percentage = parseFloat(document.getElementById("percentage").value);
+        if (number && percentage) {
+            let result = number - (number * percentage / 100);
+            document.getElementById("result").innerHTML = Number(result).toLocaleString();
+        }
+    }
+
+    inputs = document.getElementsByClassName('numberInput');
+    let input;
+    for (input of inputs) {
+        input.addEventListener("input", function (event) {
+            const input = event.target;
+            const width = input.value.length * 16;
+            input.style.width = width + "px";
+            calculate();
+        });
+    }
+</script>
+<script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4779620150755845" crossorigin="anonymous"></script>
+</body>
+</html>
