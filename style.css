@@ -19,7 +19,8 @@ a:hover {
 a:visited {
     color: rgb(203, 213, 225);
 }
-a.inlineLink{
+
+a.inlineLink {
     display: inline-block;
     margin: 0;
 }
