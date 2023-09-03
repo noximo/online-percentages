@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Easy Online Percentages - Calculate Percentage Difference between two numbers</title>
     <meta content="Compare two numbers and their percentage difference - easy online percentages calculator" name="description">
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
     <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -27,9 +27,14 @@
         <section id="resultLine">
             <div id="equals">is</div>
             <strong id="result">?</strong>%
+            <div id="info">
+                <div>Absolute difference is <strong id="absolute"></strong></div>
+                <div><span class="firstNumber"></span> is <strong id="firstToSecond"></strong> to <span class="secondNumber"></span>.</div>
+                <div><span class="secondNumber"></span> is <strong id="secondToFirst"></strong> to <span class="firstNumber"></span>.</div>
+            </div>
         </section>
         <section style="text-align: left">
-            <p>Note: You're calculating a difference between two numbers. This is the correct way when dealing with two different values (For example comparing population of two different cities) where the order of values doesn't matter (The difference between two cities would be the same no matter what city you put in first).
+            <p>Note: You're calculating a difference between two numbers. This is the correct way when dealing with two different values (For example comparing two prices or comparing population of two different cities) where the order of values doesn't matter (The difference between two cities would be the same no matter what city you put in first).
             </p>
             <p>But maybe you want to calculate a percentage change of a single value (How much population changed in a single city). If you have an
                 <i>old</i> and <i>new</i> value you want to calculate <a class="inlineLink" href="change.html">percentage change</a> instead.</p>
@@ -85,14 +90,43 @@
     </div>
 </section>
 <script defer>
+    function change(firstNumber, secondNumber) {
+        return ((firstNumber - secondNumber) / Math.abs(firstNumber)) * 100;
+    }
+
     function calculate() {
         const firstNumber = parseFloat(document.getElementById("firstNumber").value);
         const secondNumber = parseFloat(document.getElementById("secondNumber").value);
+        let secondToFirst;
+        let firstToSecond;
         if (firstNumber && secondNumber) {
             const difference = Math.abs(firstNumber - secondNumber);
             const result = (difference / ((firstNumber + secondNumber) / 2)) * 100;
 
             document.getElementById("result").innerHTML = Number(result).toLocaleString();
+            document.getElementById("absolute").innerHTML = Number(difference).toLocaleString();
+            Array.from(document.getElementsByClassName("firstNumber")).forEach((item) => item.innerHTML = firstNumber);
+            Array.from(document.getElementsByClassName("secondNumber")).forEach((item) => item.innerHTML = secondNumber);
+
+            secondToFirst = change(secondNumber, firstNumber);
+            if (secondToFirst > 0) {
+                secondToFirst = "is lowered by " + Number(secondToFirst).toLocaleString() + "%"
+            } else {
+                secondToFirst = "is increased by " + Number(Math.abs(secondToFirst)).toLocaleString() + "%";
+
+            }
+            document.getElementById("secondToFirst").innerHTML = secondToFirst;
+
+            firstToSecond = change(firstNumber, secondNumber);
+            if (firstToSecond > 0) {
+                firstToSecond = "is lowered by " + Number(firstToSecond).toLocaleString() + "%"
+            } else {
+                firstToSecond = "is increased by " + Number(Math.abs(firstToSecond)).toLocaleString() + "%";
+
+            }
+            document.getElementById("firstToSecond").innerHTML = firstToSecond;
+
+            document.getElementById("info").style.display = 'block';
         }
     }
 

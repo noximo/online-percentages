@@ -38,6 +38,9 @@ a.inlineLink {
     width: 4rem;
     font-size: x-large;
 }
+#info{
+    display: none;
+}
 
 #queryLine {
     font-size: x-large;
